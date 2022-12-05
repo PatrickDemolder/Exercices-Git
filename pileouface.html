@@ -1,0 +1,43 @@
+<script>
+  // Equipe Cyril Creten - Thomas Demolder - Patrick Demolder
+  //Pile ou Face - code écrit par Patrick Demolder
+  let choiceText;
+  let choiceNumber;
+  let score = 0;
+  let gameCount = 0;
+  let gameNumber;
+  let gameText;
+  let playAgain;
+  let a = 1;
+  while (a == 1) {
+    choiceText = prompt("pile ou face ?");
+    if (choiceText == "pile") {
+      choiceNumber = 1;
+    } else {
+      choiceNumber = 0;
+    }
+    gameNumber = Math.round(Math.random());
+    if (gameNumber == 1) {
+      gameText = "pile";
+    } else {
+      gameText = "face";
+    }
+    console.log("votre choix : " + choiceText);
+    console.log("pièce : " + gameText);
+    gameCount++;
+    if (gameNumber == choiceNumber) {
+      console.log("Bravo !");
+      score++;
+    } else {
+      console.log("Raté");
+    }
+    playAgain = prompt("Voulez-vous rejouer (y or n) ?");
+    if (playAgain == "n") {
+      a = 0;
+    }
+  }
+  console.log("Vous avez joué " + gameCount + " partie(s)");
+  console.log("Votre score : " + score);
+  let pourcentage = Math.round((score / gameCount) * 100);
+  console.log("Vote pourcentage de réussite : " + pourcentage + " %");
+</script>
